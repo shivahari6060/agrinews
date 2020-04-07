@@ -1,0 +1,81 @@
+{% extends 'blog/basic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="postdetail">
+    <div class="div1">
+        <div class="title jumbotron border shadow">
+            <h1 style="color:green; text-align: center;">{{ post.title }} </h1>
+        </div>
+        <div class="headshot">
+            {% for author in post.author.all %}
+            <img class="shadow-lg" src="{{ author.headshot.url }}">
+            {% endfor %}
+        </div>
+        <div class="writer">
+            {% for author in post.author.all %}
+            <i class="fas fa-user-edit"></i> &nbsp;{{ author }}
+            {% endfor %} </br>
+            <i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;{{ post.publish }}
+
+        </div>
+
+        <div class="postbody border shadow-sm">
+            <p>
+                {{ post.body|linebreaksbr }}
+            </p>
+        </div>
+    </div>
+    <div class="div2">
+        <div class="comment">
+            <!-- comments -->
+            
+            <h5 class="w3-bar w3-green p-2 rounded"> <i class="fas fa-comment-alt"></i>  {{ comments.count }} comments</h5>
+            {% for comment in comments %}
+            <p class="commentor  pl-2 bg-info text-white rounded-top">
+                <i class="far fa-comment-dots"></i> {{ request.user }} 
+                <span id="comment_date">
+                    | <i class="fas fa-history"></i> {{ comment.created_on }}
+                </span>
+                <hr>
+            </p>
+            <div class="pt-1 pl-2 bg-light text-dark rounded-bottom"id="comment_body">{{ comment.body | linebreaks }}</div>
+            <hr>
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <!-- <div class="div3">Div3</div> -->
+    <!-- <div class="div4">
+        <div class="recent_post container">
+            <h3>Recent Posts</h3>
+            {% for post in posts %}
+            <p><a href="{{obj.get_absolute_url}}">{{post}}</a></p>
+            {% endfor %}
+        </div>
+
+    </div> -->
+    <div class="div5 mb-2">
+        <div class="card-body">
+            {% if new_comment %}
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting moderation
+            </div>
+            {% else %}
+            <h3 class="text-center p-2 mb-2 bg-success text-white rounded"><small>Leave a comment</small></h3>
+            <form method="post">
+                {{ comment_form|crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-info">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,446 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.navbar li .nav-item {
+	font-size: 0.8vw;
+}
+.navlink i {
+	width: 100%;
+	height: auto;
+}
+.navbar input {
+	width: 80vw;
+	height: auto;
+}
+
+.wrapper {
+	width: 100%;
+	height: fit-content;
+	display: grid;
+	grid-template-areas: 
+	"post post archive" 
+	"post post ulink" 
+	"post post categories" 
+	"image image rpost";
+	/* grid-template-columns: repeat(2, 1fr) 300px; */
+	/* grid-template-rows: repeat(3, auto) 300px; */
+	grid-gap: 5px;
+	/* grid-template-columns: minmax(5rem, auto) 1fr 1fr 1fr; */
+	grid-template-columns: 50% 25% 24.2%;
+}
+
+@media screen and (max-width: 40em) {
+	.wrapper {
+		grid-template-areas: 
+		"post post post" 
+		"image image image" 
+		"archive archive archive"
+		"categories categories categories" 
+		"rpost rpost rpost" 
+		"ulink ulink ulink";
+		grid-gap: 0;
+	}
+	.wrapper .postlist h1 {
+		font-size: 1em;
+		padding-left: 1.4vw;
+	}
+	.wrapper .postlist p {
+		margin: 15px;
+		padding: 2vh 5vw;
+		font-size: 0.75em;
+		background: #fff;
+	}
+	.wrapper .postlist p #post_id {
+		font-size: 1.2em;
+	}
+	.wrapper .postlist p #post_title {
+		font-size: 1.1em;
+	}
+	.wrapper .postlist h1 {
+		font-size: 1.5em;
+		padding-left: 30vw;
+	}
+	.wrapper .postlist p button {
+		font-size: 0.8em;
+	}
+}
+
+/* Here starts the postlist css for the posts page block */
+.postlist {
+	width: 100%;
+	padding-left: 0.2vw;
+	color: #403e3e;
+	background: rgb(245, 243, 243);
+	grid-area: post;
+	padding-top: 3vh;
+	height: 100%;
+	margin-bottom: 5px;
+}
+.postlist h1 {
+	font-size: 2.5vw;
+	padding-left: 1.4vw;
+}
+.postlist p {
+	margin: 15px;
+	padding: 10px 25px;
+	font-size: 0.95em;
+	background: #fff;
+	text-align: justify;
+}
+
+.postlist p #post_id {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.8vw;
+	color: #0976cb;
+}
+
+.postlist p #post_title {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.8vw;
+	color: #0976cb;
+}
+
+.postlist p:hover {
+	background: #fff9e0;
+}
+
+.postlist p a {
+	text-decoration: none;
+}
+
+.postlist p a:hover {
+	color: #de3b1b;
+}
+.postlist p button {
+	font-size: 1.2vw;
+}
+
+.postlist .pagination {
+	text-align: center;
+	display: block;
+}
+
+/* Here ends the postlist css for the posts page block */
+
+.archive {
+	background: red;
+	color: white;
+	grid-area: archive;
+	height: 25vh;
+}
+
+.image {
+	background: grey;
+	color: white;
+	border: 1px dashed black;
+	grid-area: image;
+	height: 40vh;
+	margin-bottom: 5px;
+}
+
+.ulink {
+	background: yellow;
+	color: red;
+	grid-area: ulink;
+	height: 25vh;
+}
+
+.rpost {
+	background: pink;
+	color: red;
+	grid-area: rpost;
+	height: 25vh;
+}
+
+.categories {
+	background: green;
+	color: white;
+	grid-area: categories;
+	height: 25vh;
+}
+
+/* From here css for the post detail page  */
+.postdetail {
+	margin: 0;
+	width: auto;
+	height: 100%;
+	display: grid;
+	grid-template-areas: 
+	"post ." 
+	"post sec2" 
+	"post sec3" 
+	"post blank" 
+	"blank2 ." 
+	"blank1 .";
+	grid-template-columns: 74% auto;
+	grid-gap: 10px;
+	/* grid-template-rows: 150px repeat(5, 1fr); */
+	background: #fff;
+}
+
+
+/* From here the actual pc windows runs */
+
+.div1 {
+	grid-area: post;
+	padding: 1.5vh 0.5vw;
+	background: white;
+	width: 100%;
+	margin-left: -3px;
+}
+
+.div2 {
+	grid-area: blank2;
+	background: #fff;
+	height: 100%;
+	width: 100%;
+}
+.postdetail .div2 .comment {
+	margin: 0.2rem;
+	border-left: 0.5rem solid #ff4da6;
+	padding-left: 3vw;
+	padding-right: 3vw;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	background: #eee;
+	justify-content: space-around;
+}
+.postdetail .div2 .comment h5 {
+	font-size: 1.75rem;
+	padding-left: 1vw;
+}
+.postdetail .div2 .comment .commentor {
+	font-size: 1.5em;
+	color: #fff;
+	margin-left: 10%;
+	padding-left: 1%;
+	margin-bottom: -2vh;
+	width: 75%;
+	justify-content: center;
+	/* background-color: 	#4e9773; */
+}
+.postdetail .div2 .comment .commentor #comment_date {
+	font-size: 0.5em;
+	color: white;
+	padding-left: 0.5rem;
+}
+.postdetail .div2 .comment #comment_body {
+	color: MediumSeaGreen;
+	font-size: 1.1em;
+	display: block;
+	margin-top: -4.2vh;
+	background: #ffffcc;
+	margin-bottom: -3vh;
+	padding-left: 10px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+	width: 75%;
+	margin-left: 10%;
+}
+
+.div3 {
+	grid-area: sec2;
+	background: green;
+	color: #c0c0c0;
+  height: 40vh;
+  width:100%;
+}
+
+.div4 {
+	grid-area: sec3;
+	background: #808080;
+	color: white;
+  height: 100%;
+  width: 100%;
+}
+.div5 {
+	background: #eee;
+  grid-area: blank1;
+	width: 100%;
+}
+.div5 .card-body form{
+	padding-left: 15%;
+}
+.div5 .card-body button{
+	font-size: 1rem;
+}
+
+.div1 .title {
+	background: #ccffff;
+	padding: 1.5% 2%;
+	font-family: 'Lato', sans-serif;
+}
+.div1 .title h1 {
+	font-size: 2.5vw;
+	font-family: 'Lato', sans-serif;
+}
+
+.div1 .headshot {
+	margin-left: 2.5vw;
+	float: left;
+	margin-top: -2.8vh;
+}
+.div1 .headshot img {
+	width: 4.5vw;
+	height: 4.5vw;
+	border-radius: 50%;
+}
+
+.div1 .writer {
+	margin-left: 8vw;
+	font-size: 1em;
+	margin-top: -1.4vh;
+}
+
+.div1 .writer i {
+	color: #9923a6;
+}
+.div1 .postbody {
+	display: block;
+	margin-top: 2.5vh;
+	font-size: 0.95em;
+	color: #593b1f;
+	font-family: 'Roboto', sans-serif;
+	padding: 2vh 2vw;
+	background: #f2f2f2;
+	text-align: justify;
+}
+
+
+
+
+
+@media screen and (max-width: 40em) {
+	.postdetail {
+    width:100vw;
+		grid-template-areas: 
+		"post post" 
+		"blank2 blank2" 
+		"blank1 blank1" 
+		"sec2 sec2" 
+		"sec3 sec3" 
+		"blank blank";
+	}
+	.postdetail .div1 .postbody {
+		font-size: 0.9em;
+		padding: 1vh 2vw;
+	}
+	.postdetail .div1 .writer {
+		margin-left: 14vw;
+		font-size: 0.8em;
+		margin-top: -3.5vh;
+	}
+	.postdetail .div1 .title h1 {
+		font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+	}
+	.postdetail .div1 .headshot img {
+		width: 9vw;
+		height: 9vw;
+		border-radius: 50%;
+  }
+  .div2 {
+    grid-area: blank2;
+    background: #fff;
+		height: 100%;
+		width: 99%;
+		margin-left: -3px;
+  }
+  .postdetail .div2 .comment {
+
+    border-left: 2px solid #ff4da6;
+    background: #eee;
+    width:100vw;
+    padding-left: 2vw;
+    padding-right: 4vw;
+    padding-top: 2vh;
+		padding-bottom: 2vh;
+  }
+  .postdetail .div2 .comment #comment_body {
+    color: #00ace6;
+    font-size: 0.85em;
+    margin-top: -6vh;
+    background: #ffffcc;
+    margin-bottom: -3vh;
+    padding-left: 10px;
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+		margin-left: 15%;
+  }
+  .postdetail .div2 .comment .commentor {
+    font-size: 1em;
+		color: white;
+		margin-left: 15%;
+    padding-left: 1%;
+    margin-bottom: -2vh;
+    background:#01FF70;
+    /* background-color: 	#4e9773; */
+  }
+  .postdetail .div2 .comment .commentor #comment_date {
+    font-size: 0.5em;
+    color: white;
+    padding-left: 0.5rem;
+  }
+  .postdetail .div2 .comment h5 {
+    font-size: 1.5rem;
+		padding-left: 1vw;
+		color:orange;
+	}
+	.postdetail .div5{
+		width: 99%;
+	}
+  .postdetail .div5 .card-body form {
+    font-size: 0.8em;
+    width:80%;
+		margin-top:1.5em;
+		margin-left: -9%;
+  }
+  .postdetail .div5 .card-body button{
+    font-size: 1em;
+	}
+	.postdetail .div4{
+		width: 99%;
+	}
+	.postdetail .div3{
+		width: 99%;
+	}
+}
+
+
+/* From here ends the post detail page */
+
+/* This is the foooter */
+
+footer {
+	width: 100%;
+	margin-top: auto;
+	padding: 10px;
+	background: #2b755e;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+	font-size: 1.4vw;
+	position: relative;
+	bottom: 0;
+	height: 2.8em;
+	left: 0;
+}
+
+@media screen and (max-width: 40em) {
+	footer {
+		width: 100%;
+		padding: 10px;
+		background: #2b755e;
+		justify-content: center;
+		text-align: center;
+		color: #fff;
+		font-size: 0.9em;
+		position: relative;
+		bottom: 0;
+		height: 2.5em;
+		left: 0;
+	}
+}
+
+/* This is the foooter */

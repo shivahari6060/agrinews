@@ -1,0 +1,162 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'blog/css/home.css' %}">
+  <script src="https://kit.fontawesome.com/7fd48acc34.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script src="https://kit.fontawesome.com/7fd48acc34.js" crossorigin="anonymous"></script>
+
+  <!-- Google fonts link -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+  <title>Agri-News</title>
+
+</head>
+
+<body>
+  <section>
+    <div class="heading">
+      <p>Welcome to agri-news site.</p>
+    </div>
+    <div class="center">
+      <span class="type"></span>
+    </div>
+    <div class="heading1">
+      <div id="heading"></div>
+    </div>
+    <div class="button">
+      <a href="{% url 'login' %}">
+        <button type="button" class="btn btn-primary">
+          <i class="fas fa-shuttle-van"></i> Visit Home
+        </button>
+      </a>
+    </div>
+    <!-- <div class="typed">
+      <p>Coding is <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+    </div> -->
+    <!-- <div class="center">
+      <span class="typed-text-woo"></span>
+    </div> -->
+
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <!-- <script src="typed.js"></script> -->
+  <!--This is the javascript and jQuery for the webpage.-->
+
+  <script>
+    //this is for the typewriting effect
+    var i = 0, text;
+    text = "Follow the following link to visit Home"
+
+    function typing() {
+      if (i < text.length) {
+        document.getElementById("heading").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 50);
+      }
+    }
+    typing();
+    //this is for the typewriting effect
+
+    // This code is not working fine so it is commented out
+    // This is the new typewriter effect//
+    // const typedTextSpan = document.querySelector(".typed-text")
+    // const textArray = [
+    //   "hard",
+    //   "fun",
+    //   "a journey",
+    //   "LIFE"
+    // ]
+    // const typingDelay = 200;
+    // const erasingDelay = 100;
+    // const newTextDelay = 2000;
+
+    // let textArrayIndex = 0;
+    // let charIndex = 0;
+
+
+    // // fuction starts from here
+    // function type() {
+    //   if (charIndex < textArray[textArrayIndex].length) {
+    //     typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    //     charIndex++;
+    //     setTimeout(type, typingDelay);
+    //   }
+    //   else {
+    //     setTimeout(erase, newTextDelay);
+    //   }
+    // }
+    // function erase() {
+    //   if (charIndex > 0) {
+    //     typedTextSpan.textContent -= textArray[textArrayIndex].substring(0, charIndex - 1);
+    //     charIndex--;
+    //     setTimeout(erase, erasingDelay);
+    //   }
+    //   else {
+    //     textArrayIndex++;
+    //     if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+    //     setTimeout(type, typingDelay + 1100);
+    //   }
+    // }
+
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   setTimeout(type, newTextDelay + 250);
+    // });
+    //***********************************************************
+
+
+    //this is for the typed.js lib function coding which is also not working fine
+    // $(document).ready(function () {
+
+    //     $(".typed-text-woo").Typed({
+    //       strings: [
+    //         "hello world",
+    //         "It is awesome"
+    //       ],
+    //       typeSpeed: 70,
+    //       backDelay: 200,
+    //       loop: true
+    //     });
+
+
+    // });
+    //*************************************************************
+
+    var typed = new Typed('.type', {
+      strings: [
+        "A farmer is always going to be rich next year.",
+        "The farmer works the soil, The agriculturist works the farmer",
+        "If farm ecology and economics go wrong, nothing else will go right in agriculture.",
+        "Collaboration has no hierarchy. The Sun collaborates with soil to bring flowers on the earth."
+      ],
+      typeNew: 80,
+      typeSpeed: 80,
+      backDelay: 2000,
+      loop: true
+    });
+
+  </script>
+</body>
+
+</html>

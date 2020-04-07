@@ -1,0 +1,78 @@
+{% extends 'blog/basic.html' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    .about_page{
+        background: #eee;
+    }
+    .s-m{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: center;
+
+    }
+    .s-m a{
+        display: inline-flex;
+        text-decoration: none;
+        width: 40px;
+        height:40px;
+        background: #2c3e50;
+        color: white;
+        margin: 0.6px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        transition:0.4s;
+        font-size: 24px;
+    }
+    .s-m a:hover{
+        background: #e67e22;
+    }
+
+    .s-m a i{
+        transition: 0.4s all;
+    }
+    .s-m a:hover > i{
+        transform: scale(1.4) rotate(25deg);
+    }
+
+
+@media screen and (max-width: 40em) {
+    .s-m a{
+        width: 25px;
+        height: 25px;
+        font-size: 15px;
+    }
+}
+</style>
+
+
+<!-- from here the body of the about section starts -->
+<div class="about_page">
+    <div>Jumbotron</div>
+    <div>About Us</div>
+    <div>counter</div>
+    <div></div>
+    <div class="s-m">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

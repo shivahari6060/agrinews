@@ -1,0 +1,192 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section{
+  width: 100%;
+  height:100vh;
+  background: linear-gradient(-45deg, rgb(235, 128, 96), rgb(230, 106, 147), rgb(67, 182, 224), rgb(68, 226, 189));
+  background-size: 400% 400%;
+  position:relative;
+  animation: change 10s ease-in-out infinite;
+}
+
+
+section .heading{
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid white;
+  position: absolute;
+  top: 22%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: space-around;
+  padding:15px;
+  width: 1000px;
+  font-weight: 500;
+  color:white;
+}
+
+@keyframes change{
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+
+.center{
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.2rem;
+  font-weight: 900;
+  top: 65%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: space-around;
+  width:100vw;
+  color:white;
+}
+.heading1{
+  width: 100%;
+  top: 43%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: space-around;
+  color:white;
+}
+#heading{
+  font-family:'Baloo 2', cursive;
+  font-size: 2rem;
+  font-weight: 500;
+  /* top: 43%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: space-around; */
+}
+
+.button button{
+  font-size: 2vw;
+  top: 52%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width:40em){
+  section{
+    width: 100%;
+    height:100vh;
+    background: linear-gradient(-45deg, rgb(235, 128, 96), rgb(230, 106, 147), rgb(67, 182, 224), rgb(68, 226, 189));
+    background-size: 400% 400%;
+    position:relative;
+    animation: change 10s ease-in-out infinite;
+  }
+  section .heading{
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 3px solid white;
+    position: absolute;
+    top: 22%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: space-around;
+    padding:15px;
+    width:100%;
+    font-weight: 500;
+    color:white;
+  }
+  
+  @keyframes change{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+  }
+  .center{
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.2rem;
+    font-weight: 900;
+    top: 70%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: space-around;
+    width:100vw;
+    color:white;
+  }
+  .heading1{
+    width: 100%;
+    top: 43%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: space-around;
+    color:white;
+  }
+  #heading{
+    font-family:'Baloo 2', cursive;
+    font-size:1.2rem;
+    font-weight: 500;
+  }
+  
+  .button button{
+    font-size: 1em;
+    top: 52%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+}
+/* For the javascript typewriter effect long  tesma NaN error aathyo text wala*/
+/* .typed{
+  display: flex;
+}
+
+.typed p{
+  font-size: 3rem;
+  overflow: hidden;
+}
+
+.typed-text{
+  color: orangered;
+}
+
+.cursor{
+  display: inline-block;
+  width:3px;
+  background: #ccc;
+  margin-left:0.1rem;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  0%{background-color: #ccc;}
+  49%{background-color: #ccc;}
+  50%{background-color: transparent;}
+  99%{background-color: transparent;}
+  100%{background-color: #ccc;}
+} */

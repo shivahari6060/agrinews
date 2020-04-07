@@ -1,0 +1,65 @@
+{% extends 'blog/basic.html' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    {% if query %}
+    <div class="postlist">
+        <h1 class="col-sm center" style="font-weight: bold;">Results for "{{request.GET.q}}"</h1>
+
+
+        <hr>
+        {% if results %}
+        {% for result in results %}
+        <p>
+            <!-- <b style="color: #0976CB ; font-size: 22px;font-family: 'Montserrat', sans-serif;">{{ result.id }}.</b>  -->
+            <b style="font-size: 22px; font-family: 'Montserrat', sans-serif; color: #0976CB ;"><a
+                    href='{{ result.slug }}'>{{ result.title }}</a></b>
+                </br>
+            {{ result.body| truncatechars:450 }}
+            <a href='{{ result.slug}}'>
+                <button type="button" class="btn btn-warning btn-sm">Continue Reading</button>
+            </a>
+        </p>
+        <hr>
+        {% endfor %}
+        {% endif %}
+
+        {% endif %}
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                <a href="?page=1 ">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }} ">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    <!-- <div class="archive">Archive</div>
+    <div class="ulink">
+
+    </div>
+    <div class="rpost">Recent Posts</div>
+    <div class="image">Image Gallery</div>
+    <div class="categories">Categories</div> -->
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

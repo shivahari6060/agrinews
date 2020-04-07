@@ -1,0 +1,59 @@
+{% extends 'blog/basic.html' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <div class="postlist">
+        <h1>Articles</h1>
+
+
+        <hr>
+        {% for post in post_list %}
+        <p class="shadow-sm rounded border">
+            <!-- <b id="post_id">{{ post.id }}.</b>  -->
+        <b id="post_title"><a href='{{ post.slug }}'>{{ post.title }}</a></b>
+        </br>
+            {{ post.body| truncatechars:400 }}&nbsp;
+            <a href='{{ post.slug }}'>
+                <button type="button" class="btn btn-warning btn-sm">Continue Reading</button>
+            </a>
+        </p>
+
+        {% empty %}
+        <p>No articles yet.</p>
+
+        {% endfor %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }} ">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    <!-- <div class="archive">Archive</div>
+    <div class="ulink ">lorem10</div>
+    <div class="rpost">Recent Posts</div>
+    <div class="image">Image Gallery</div>
+    <div class="categories">Categories</div> -->
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
