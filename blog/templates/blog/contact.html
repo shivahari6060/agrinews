@@ -1,6 +1,7 @@
 {% extends 'blog/basic.html' %}
+{% load crispy_forms_tags %}
 
-{% block title %}{% endblock %}
+{% block title %} {% endblock %}
 
 {% block body %}
 <style>
@@ -9,53 +10,77 @@
     padding:0;
     box-sizing: border-box;
     background-image: linear-gradient(-45deg, #fc7303, #03adfc);
-    background-size: 120% 120%;
-    height: 84vh;
+    background-size: 110% 110%;
+    height: 100%;
     width: 100%;
+    padding-bottom: 15px;
+    margin-top: -10px;
 
 
 }
 .contact .content{
     justify-content: center;
     align-items: center;
-    display: row;
+}
+.contact h2{
+    text-align: center;
 }
 .contact section{
-    display: inline-flex;
     justify-content: center;
+    align-items:center;
     height: 84vh;
+    background: #eee;
+    padding:2rem;
+    width:600px;
 
 }
-.contact section .form{
-    width: 100%;
+.contact section form{
+    width: 80%;
 }
 
 @media screen and (max-width: 40em) {
     .contact{
         width: 100%;
         margin-bottom: 1px;
+        height: 100%;
+    }
+    .contact h2{
+        text-align: center;
+    }
+    .contact section{
+        height: 100%;
+        width: 350px;
+        margin-top: -10px;
+
+
+    }
+    .contact section form{
+        font-size: 0.75em;
+        padding-left: -10px;
+        margin-left: -20px;
     }
 }
 </style>
 
 
 <div class="contact">
-    <div class="row">
-    <section class=" col-sm-6"> 
-        hello 
-        
+<h2 class="text-center mt-4 mb-4 p-2 mb-2 bg-success text-white rounded">Contact Us</h2>
+    <section class=" container"> 
+     <form  class=" col-sm-4"method="post">
+                {{ form|crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-info">Submit</button>
+            </form>
+</section>
 
-    </section>
-    <section class=" form col-sm-6"> <div class="bg-white">she is the girl
-            
-        </div></section>
-    </div>
 </div>
 
 
 
-
-
+<div></div>
+<div></div>
+<div></div>
+<div></div>
 
 
 {% include 'blog/footer.html' %}

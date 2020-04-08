@@ -75,3 +75,20 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
+
+
+
+class Contact(models.Model):
+    first_name = models.CharField(max_length=80)
+    last_name =models.CharField(max_length=80)
+    email = models.EmailField()
+    message = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return 'Contact message  {} by {}'.format(self.body, self.first_name)

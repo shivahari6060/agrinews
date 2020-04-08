@@ -5,7 +5,7 @@ from blog.models import Post, Comment
 from django.utils import timezone
 from django.db.models import Q
 from django.core.paginator import Paginator
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
 
 
 # Create your views here.
@@ -81,5 +81,17 @@ def aboutPage(request):
     return render(request, 'blog/about.html', context)
 
 def contactPage(request):
-    context={}
+    form = ContactForm()
+    if request.method=='POST':
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+        else:
+            form = ContactForm()
+
+    context={
+        'form':form,
+    }
     return render(request, 'blog/contact.html', context)
