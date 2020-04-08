@@ -1,0 +1,62 @@
+{% extends 'blog/basic.html' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<style>
+.contact{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    background-image: linear-gradient(-45deg, #fc7303, #03adfc);
+    background-size: 120% 120%;
+    height: 84vh;
+    width: 100%;
+
+
+}
+.contact .content{
+    justify-content: center;
+    align-items: center;
+    display: row;
+}
+.contact section{
+    display: inline-flex;
+    justify-content: center;
+    height: 84vh;
+
+}
+.contact section .form{
+    width: 100%;
+}
+
+@media screen and (max-width: 40em) {
+    .contact{
+        width: 100%;
+        margin-bottom: 1px;
+    }
+}
+</style>
+
+
+<div class="contact">
+    <div class="row">
+    <section class=" col-sm-6"> 
+        hello 
+        
+
+    </section>
+    <section class=" form col-sm-6"> <div class="bg-white">she is the girl
+            
+        </div></section>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% include 'blog/footer.html' %}
+{% endblock %}
